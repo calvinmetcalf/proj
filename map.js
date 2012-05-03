@@ -1,13 +1,16 @@
-var m,mainLayer;
+var m,mainLayer,marker;
 var zoom = 8;
 var center = new google.maps.LatLng(42.04113400940814,-71.795654296875);
 var tid = 3772658;
+var geocoder = new google.maps.Geocoder();
 
 $(function() {
      $( "#tabs" ).tabs({
         	collapsible: true,
             selected: -1
 		});
+         $( "input:submit,input:reset" ).button();
+        $('input, textarea').placeholder();
     map();
     popLists();
 });
@@ -22,7 +25,28 @@ function map(){
      mainLayer.setQuery("SELECT 'geometry' FROM " + tid);
       mainLayer.setMap(m);
 }
+function geocode() {
+     var address = document.getElementById("address").value;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        m.setCenter(results[0].geometry.location);
+        m.setZoom(14);
+     marker = new google.maps.Marker({
+            map: m, 
+            position: results[0].geometry.location
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+}
 
+function resetgeo() {
+    
+    m.setCenter(center);
+    m.setZoom(zoom);
+marker.setMap(null);
+}
 function popLists(){    
     MakePopList('Cong',getCongData);
    MakePopList('Status',getStatusData);
