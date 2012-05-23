@@ -20,19 +20,29 @@ $(function() {
      
      });
  m.geocoder();
-
- m.getUV("cong",sCB);
- m.getUV("SENATOR",sCB);
- m.getUV("REP",sCB);
+a =["cong","SENATOR","REP"];
+$('#tabs-2').append('<select id="which"><option value="none">Pick One</option></select>');
+$.each(a,function(i,p){
+    $('#which').append('<option value="' + p + '">' + p + '</option>');
+    
+});
+$('#which').change(function(){
+    var val = $('#which').val();
+    $('#Select').remove();
+  if(val !== 'none'){
+       m.getUV(val,sCB);
+  }
+})
+// m.getUV("REP",sCB);
  
 });
 var sCB = function(data,name){
-    $('#tabs-2').append('<select id="' + name + 'Select"><option value="all">Any ' + name + '</option></select>');
+    $('#tabs-2').append('<select id="Select"><option value="all">Any ' + name + '</option></select>');
    $.each(data.sort(),function(i,p){
-    $('#' + name + 'Select').append('<option value="' + p + '">' + p + '</option>'); 
+    $('#Select').append('<option value="' + p + '">' + p + '</option>'); 
    });
-   $('#' + name + 'Select').change(function(){
-      var val = $('#' + name + 'Select').val();
+   $('#Select').change(function(){
+      var val = $('#Select').val();
       d = val;
       if(val === "all"){
        m.setQ('');
