@@ -20,7 +20,7 @@ $(function() {
      
      });
  m.geocoder();
-a =["cong","SENATOR","REP"];
+a =["Congress","Senate","House"];
 $('#tabs-2').append('<select id="status"><option value="all">All Statuses</option></select>');
  m.getUV("Status",stCB);
 $('#tabs-2').append('<select id="which"><option value="none">Pick One</option></select>');
@@ -42,7 +42,9 @@ $('#which').change(function(){
 var sCB = function(data,name){
     $('#tabs-2').append('<select id="Select"><option value="all">Any ' + name + '</option></select>');
    $.each(data.sort(),function(i,p){
-    $('#Select').append('<option value="' + p + '">' + p + '</option>'); 
+       var rx = new RegExp("\\B[A-Z]","g");
+       var ps = p.replace(rx," " + "$&"); 
+    $('#Select').append('<option value="' + p + '">' + ps + '</option>'); 
    });
    $('#Select').change(function(){
       var val = $('#Select').val();
