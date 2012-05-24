@@ -16,11 +16,11 @@ $(function() {
         $('input, textarea').placeholder();
   m = new ftMap({
      mapDiv: "map",
-     tid: 4009020
+     tid: 4018032
      
      });
  m.geocoder();
-a =["Congress","Senate","House"];
+a =['Congress','Senate','House'];
 $('#tabs-2').append('<select id="status"><option value="all">All Statuses</option></select>');
  m.getUV("Status",stCB);
 $('#tabs-2').append('<select id="which"><option value="none">Pick One</option></select>');
