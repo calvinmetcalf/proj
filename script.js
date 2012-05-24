@@ -21,6 +21,8 @@ $(function() {
      });
  m.geocoder();
 a =["cong","SENATOR","REP"];
+$('#tabs-2').append('<select id="status"><option value="all">All Statuses</option></select>');
+ m.getUV("Status",stCB);
 $('#tabs-2').append('<select id="which"><option value="none">Pick One</option></select>');
 $.each(a,function(i,p){
     $('#which').append('<option value="' + p + '">' + p + '</option>');
@@ -29,11 +31,12 @@ $.each(a,function(i,p){
 $('#which').change(function(){
     var val = $('#which').val();
     $('#Select').remove();
+    m.setQ("dist","");
   if(val !== 'none'){
        m.getUV(val,sCB);
   }
 })
-// m.getUV("REP",sCB);
+
  
 });
 var sCB = function(data,name){
@@ -43,19 +46,31 @@ var sCB = function(data,name){
    });
    $('#Select').change(function(){
       var val = $('#Select').val();
-      d = val;
+     
       if(val === "all"){
-       m.setQ('');
+       m.setQ("dist",'');
       }
       else{
-       m.setQ("'" + name + "' = '" + val +"'");
+       m.setQ("dist","'" + name + "' = '" + val +"'");
       }
    });
      
  };
  
 
-
+var stCB = function(data){
+     $.each(data.sort(),function(i,p){
+         $('#status').append('<option value="' + p + '">' + p + '</option>');
+     });
+     $('#status').change(function(){
+         var val = $('#status').val();
+           if(val === "all"){
+       m.setQ("status",'');
+      }else{
+         m.setQ("status","'Status' = '" + val +"'");  
+      }
+     });
+};
 
 
 
@@ -72,6 +87,7 @@ var ftMap =function (params){
     var _geometry = params.geometry||'geometry';
     var _where = params.where||"";
     var _opp = params.layerOptions||null;
+    _name.ql={};
    
     if(_map!==null){
     
@@ -109,10 +125,25 @@ var ftMap =function (params){
     }
     return a;
 };
-this.setQ = function(q){
- _where = q;   
+this.setQ = function(r,q){
+    if(q===""){
+     delete _name.ql[r]   ; 
+    }else{
+    _name.ql[r]=q;}
+    var qs =[];
+    $.each(_name.ql,function(k,v){
+       qs.push(v);
+    });
+    if(qs.length===0){
+        _where = ""; 
+    }else if(qs.length===1){
+     _where = qs.pop();   
+    }else{
+     _where = qs.join(' and ');   
+    }
+   
  _name.layer.setQuery("SELECT '" + _geometry + "' FROM " + _tid + " WHERE " + _where);
-}
+};
 this.geocoder = function(geof,addrf,resetf){
     var _geocoder = new g.Geocoder();
     geof = geof||'geocode';
