@@ -1,11 +1,9 @@
+/** @preserve @calvinmetcalf **/
+
 var g = google.maps;
-var m,d;
+var m;
 var zoom = 8;
 var center = new g.LatLng(41.914541,-71.592407);
-//var geocoder = new g.Geocoder();
- 
-//var tid = 4006317;
-//var d;
 google.load('visualization', '1', {});
 $(function() {
       $( "#tabs" ).tabs({
