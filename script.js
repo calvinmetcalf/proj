@@ -14,7 +14,7 @@ $(function() {
         $('input, textarea').placeholder();
   m = new ftMap({
      mapDiv: "map",
-     tid: 4018032
+     tid: 4226786
      
      });
  m.geocoder();
