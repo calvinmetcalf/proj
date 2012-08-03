@@ -1,60 +1,49 @@
 <!doctype html>
-<html lang="en"><head><meta charset='utf-8'>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-        <!--favicon-->
-        <link rel="shortcut icon" href="favicon.ico" />
-        <title>
-            Projects
-        </title>
-    
-        <link rel="stylesheet" href="style.css" type="text/css" />
-        <link rel="stylesheet" href="http://calvinmetcalf.github.com/smoothness/smoothness.css" type="text/css" />
-    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBvl2Lx_Tj-9N_fT9arfnl8utRkVPe50uA&sensor=true"></script>
-       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-         <script type="text/javascript" src="http://calvinmetcalf.github.com/jquery-placeholder/jquery.placeholder.min.js"></script>
-      
-            <div id="tabs">
+<html lang="en">
+  <head>
+    <meta charset='utf-8'/>
+<link rel="shortcut icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="style.css"/>
+   
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.2/leaflet.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.2/leaflet.ie.css" />
+    <![endif]-->
+    <script src="http://cdn.leafletjs.com/leaflet-0.4.2/leaflet.js"></script>
+    <link rel="stylesheet" href="http://danzel.github.com/Leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="http://danzel.github.com/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="http://danzel.github.com/Leaflet.markercluster/dist/MarkerCluster.Default.ie.css" /><![endif]-->
+	<script src="http://danzel.github.com/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="http://calvinmetcalf.github.com/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <title>
+     Project Locations
+    </title>
+  </head>
+  <body><div id="tabs">
     <ul>
-        <li><a href="#tabs-1">Search</a></li>
-    	<li><a href="#tabs-2">Query</a></li>
-    	
-	</ul><div id="tabs-1">
-    	 <input type="text" id="address" style="width:16em;" placeholder="Enter an Address or LatLong" />
-  <input type="submit" value="Search" id='geocode'/>
-  <input type="reset" value="Reset" id='resetgeo'/>
-
+    <li><a href="#search">Search</a></li>
+      <li><a href="#query">Query</a></li>
+      <li><a href="#LookUp">Look Up</a></li>
+    </ul>
+    <div id="search"><form id="geocoder"><input type="text" class="tbox" id="address" placeholder="Enter an Address or LatLong" />
+  <input type="submit" value="Search" id="geocode"/>
+  <input type="reset" value="Reset" id="resetgeo"/></form>
         </div>
-<div id="tabs-2">
-   </div>
-</div>
-<div id="legend"><b>Legend</b><ul>
-<li class="smallRed">Not Started</li>
-<li class="smallGreen">In Progress</li>
-
-<li class="smallBlue">Completed</li>
-<a href="http://www.google.com/fusiontables/DataSource?dsrcid=4018032" target="_blank" tabindex="90">View on Google
-<br />Fusion Tables</a><br/>
-<a href="https://www.google.com/fusiontables/api/query?sql=SELECT+*+FROM+4018032" target="_blank" tabindex="95">
-Download the file</a>
-</div>
-
-
-<a id="logo" href="http://www.massdot.state.ma.us/planning" target="_blank"><img src="otp.png" width="200" height="57" alt="logo and link home" border="0"/></a>
+        <div id="query"><select id="getStatus"></select>
+        <select id="getDi">
+        <option value="">Highway And MBTA</option>
+        <option value="Highway">Highway</option>
+        <option value="MBTA">MBTA</option>
+        </select>
+        </div>
         
-        <div id="map"></div><script type="text/javascript" src="map.js"></script><script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-31218444-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-        </body>
-        </html>
+        <div id="LookUp"><form id="ProjLookUp"><input type="text" id="ProjNum" class="tbox" placeholder="Enter a Project Number" /><input type="submit" value="Look Up" id="ProjLookUp"/>
+  <input type="reset" value="Reset" id="ProjReset"/></form></div></div><a id="logo" href="http://www.massdot.state.ma.us/planning" target="_blank"><img src="img/otp.png" alt="logo and link home" border="0"/></a>
+    <div id="map"></div>
+<script type="text/javascript" src="esri2geo.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
