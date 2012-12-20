@@ -1,4 +1,5 @@
-  var Communist, communist,
+(function() {
+  var Communist,
     __slice = [].slice;
 
   Communist = function(fun) {
@@ -45,6 +46,8 @@
     }
   };
 
-  communist = function(fun) {
+  window.communist = function(fun) {
     return new Communist(fun);
   };
+
+}).call(this);
