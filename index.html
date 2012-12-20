@@ -5,19 +5,19 @@
 <link rel="shortcut icon" href="img/favicon.ico"/>
     <link rel="stylesheet" href="style.css"/>
    
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css"/>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.2/leaflet.css" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css" />
     <!--[if lte IE 8]>
-      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.2/leaflet.ie.css" />
+      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css" />
     <![endif]-->
-    <script src="http://cdn.leafletjs.com/leaflet-0.4.2/leaflet.js"></script>
-    <link rel="stylesheet" href="http://danzel.github.com/Leaflet.markercluster/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="http://danzel.github.com/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
-	<!--[if lte IE 8]><link rel="stylesheet" href="http://danzel.github.com/Leaflet.markercluster/dist/MarkerCluster.Default.ie.css" /><![endif]-->
-	<script src="http://danzel.github.com/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
         <script type="text/javascript" src="http://calvinmetcalf.github.com/jquery-placeholder/jquery.placeholder.min.js"></script>
+          <script type="text/javascript" src="leaflet-hash.js"></script>
+          <script type="text/javascript" src="communist.js"></script>
+        
     <title>
      Project Locations
     </title>
@@ -27,12 +27,13 @@
     <li><a href="#search">Search</a></li>
       <li><a href="#query">Query</a></li>
       <li><a href="#LookUp">Look Up</a></li>
+     
     </ul>
     <div id="search"><form id="geocoder"><input type="text" class="tbox" id="address" placeholder="Enter an Address or LatLong" />
   <input type="submit" value="Search" id="geocode"/>
   <input type="reset" value="Reset" id="resetgeo"/></form>
         </div>
-        <div id="query"><select id="getStatus"></select>
+        <div id="query"><select id="getStatus"><option value="">All Statuses</option></select>
         <select id="getDi">
         <option value="">Highway And MBTA</option>
         <option value="Highway">Highway</option>
@@ -41,7 +42,9 @@
         </div>
         
         <div id="LookUp"><form id="ProjLookUp"><input type="text" id="ProjNum" class="tbox" placeholder="Enter a Project Number" /><input type="submit" value="Look Up" id="ProjLookUp"/>
-  <input type="reset" value="Reset" id="ProjReset"/></form></div></div><a id="logo" href="http://www.massdot.state.ma.us/planning" target="_blank"><img src="img/otp.png" alt="logo and link home" border="0"/></a>
+  <input type="reset" value="Reset" id="ProjReset"/></form></div>
+
+</div><a id="logo" href="http://www.massdot.state.ma.us/planning" target="_blank"><img src="img/otp.png" alt="logo and link home" border="0"/></a>
     <div id="map"></div>
 <script type="text/javascript" src="esri2geo.js"></script>
     <script type="text/javascript" src="script.js"></script>
