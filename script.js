@@ -330,7 +330,7 @@ while(i<len){
         };
         makeOpt("All","Select A Rep");
                 while(i<len){
-                    makeOpt(data[i],data[i].replace(/((?!^)([A-Z]))/g," $2");
+                    makeOpt(data[i],data[i].replace(/((?!^)([A-Z]))/g," $2"));
                 i++;
                 }
                 frag.appendChild(selc);
