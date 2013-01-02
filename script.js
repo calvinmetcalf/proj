@@ -80,7 +80,18 @@ url.setW=function(k,v){
  url.where[k]=v;   
 };
 url.rmW=function(k){
+    if(typeof k === "string"){
     delete url.where[k];
+    }else{
+        var len = k.length;
+        var i = 0;
+        while(i<len){
+        if(url.where[k[i]]){
+            delete url.where[k[i]];
+        }
+        i++;
+        }
+    }
 };
 url.getW=function(){
     var a = [];
@@ -310,8 +321,18 @@ while(i<len){
         out.sort();
         return out;
     });
+    $("#query").on("change","#getRep",function(){
+        var val = $("#getRep").val();
+        if(val==="All"){
+            url.rmW(sel.val());
+        }else{
+            url.setW(sel.val(),val);
+        }
+         redo();
+    });
     sel.change(function(){
         var oDiv = document.getElementById("getRep");
+        url.rmW(["House","Senate","Congress"]);
         if(oDiv){
             oDiv.parentNode.removeChild(oDiv);
         }
