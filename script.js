@@ -1,6 +1,7 @@
 var dd;
 //set the options
-var toGeo = communist(toGeoJSON);
+var toGeo = communist();
+toGeo.add("toGeo",toGeoJSON);
 var m= L.map('map').setView([42.3584308,-71.0597732], 8);
 new L.Hash(m);
 var mapQuestAttr = 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; ';
@@ -107,12 +108,12 @@ getLayers();
 //this is the call back from the jsonp ajax request
 function parseLine(data){
 /*you'd think you'd want to put the command to clear the old layer here instead of after zooming, but the markers are not not visible when you zoom, so it ends up being much less noticeable clearing them earlier*/
-toGeo.send(data,function(d){gl.addData(d);g.addLayer(gl).addLayer(gp);});
+toGeo.send("toGeo",data,function(e,d){gl.addData(d);g.addLayer(gl).addLayer(gp);});
 makeAuto(data);
 }
 function parsePoint(data){
 /*you'd think you'd want to put the command to clear the old layer here instead of after zooming, but the markers are not not visible when you zoom, so it ends up being much less noticeable clearing them earlier*/
-toGeo.send(data,function(d){gp.addData(d)});
+toGeo.send("toGeo",data,function(e,d){gp.addData(d)});
 makeAuto(data);
 }
 /*set up listeners on both drag and zoom events
@@ -222,7 +223,9 @@ function makeAuto(d){
    var f= d.features;
    var len = d.features.length;
    var i = 0;
+   dd=[];
    while(i<len){
+       dd.push({House:f[i].attributes.House,Senate:f[i].attributes.Senate,Congress:f[i].attributes.Congress});
        if(!ac[f[i].attributes.ProjectNumber]){
        ac[f[i].attributes.ProjectNumber]=d.geometryType;
        }
@@ -246,7 +249,7 @@ function lookUp(){
     var v=$("#ProjNum").val();
     $.get(url[t[ac[v]]]+"outFields="+url.fields+"&where=ProjectNumber%3D%27"+v+"%27"+url.end+url.spacial.getSpatial(),parseLookUp,"JSONP");
     function parseLookUp(data){
-        toGeo.send(data,function(d){
+        toGeo.send("toGeo",data,function(e,d){
             lu.addData(d);
             m.fitBounds(lu.getBounds());
             });
@@ -264,7 +267,78 @@ var len = statuses.length;
 var i = 0;
 while(i<len){
  $("#getStatus").append("<option value='"+ statuses[i]+"'>"+statuses[i]+"</option>");
- i++
+ i++;
 }
 }
+(function(){
+    (function(){
+        var chambers = ["House","Senate","Congress"];
+        var frag = document.createDocumentFragment();
+        var sel = document.createElement("select");
+        sel.id="getCham";
+        var makeOpt = function(v,tx){
+          var opt = document.createElement("option");  
+          opt.value=v;
+          opt.innerHTML=tx;
+         sel.appendChild(opt); 
+        };
+    
+        makeOpt("All","Pick a Chamber");
+        var len = chambers.length;
+        var i = 0;
+        while(i<len){
+            makeOpt(chambers[i],chambers[i]);
+            i++;
+        }
+        frag.appendChild(sel);
+        var qDiv = document.getElementById("query");
+        qDiv.appendChild(frag);
+    }());
+(function(){
+    var sel = $("#getCham");
+    toGeo.add("getHouses",function(chamber,data){
+        var out = [];
+        var len = data.length;
+        var i = 0;
+        while(i<len){
+            var rep = data[i][chamber];
+            if(out.indexOf(rep)==-1){
+            out.push(rep);
+            }
+            i++;
+        }
+        out.sort();
+        return out;
+    });
+    sel.change(function(){
+        var oDiv = document.getElementById("getRep");
+        if(oDiv){
+            oDiv.parentNode.removeChild(oDiv);
+        }
+        if(sel.val()!=="All"){
+            toGeo.send("getHouses",sel.val(),dd,function(err,data){
+                var len = data.length;
+                var i = 0;
+                var frag = document.createDocumentFragment();
+                var selc = document.createElement("select");
+                selc.id="getRep";
+                var makeOpt = function(v,tx){
+          var opt = document.createElement("option");  
+          opt.value=v;
+          opt.innerHTML=tx;
+         selc.appendChild(opt); 
+        };
+        makeOpt("All","Select A Rep");
+                while(i<len){
+                    makeOpt(data[i],data[i].replace(/((?!^)([A-Z]))/g," $2");
+                i++;
+                }
+                frag.appendChild(selc);
+                var qDiv = document.getElementById("query");
+        qDiv.appendChild(frag);
+            });
+        }
+    })
+}())
+}())
 
