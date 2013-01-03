@@ -1,4 +1,41 @@
 function toGeoJSON(data,cb){
+var ajax = function (url) {
+    // the following is from JavaScript: The Definitive Guide
+    if (XMLHttpRequest === undefined) {
+    	window.XMLHttpRequest = function() {
+			try {
+				return new ActiveXObject("Microsoft.XMLHTTP.6.0");
+			}
+			catch  (e1) {
+				try {
+					return new ActiveXObject("Microsoft.XMLHTTP.3.0");
+				}
+				catch (e2) {
+					throw new Error("XMLHttpRequest is not supported");
+				}
+			}
+		};
+	}
+    var request = new XMLHttpRequest();
+    var response;
+    request.onreadystatechange = function() {
+        if (request.readyState === 4 && request.status === 200) {
+            if(JSON) {
+                response = JSON.parse(request.responseText);
+        	} else {
+        		response = eval("("+ request.responseText + ")");
+        	}
+           
+        }
+    };
+    request.open("GET", url,false);
+    request.send();
+    return response;
+};
+if(typeof data === "string"){
+    
+    return toGeoJSON(ajax(data));
+}
     var outPut = { "type": "FeatureCollection",
   "features": []};
     var fl = data.features.length;

@@ -166,8 +166,14 @@ for(var key in p){
 }
 function getLayers(){
     ac={};
-    $.get(url.point+"outFields="+url.fields+"&where="+url.getW()+url.end+url.spacial.getSpatial(),parsePoint,"JSONP");
-    $.get(url.line+"outFields="+url.fields+"&where="+url.getW()+url.end+url.spacial.getSpatial(),parseLine,"JSONP");
+    toGeo.send("toGeo",url.point+"outFields="+url.fields+"&where="+url.getW()+url.end+url.spacial.getSpatial(),function(e,d){
+        gp.addData(d);
+        makeAuto(d);
+    });
+    toGeo.send("toGeo",url.line+"outFields="+url.fields+"&where="+url.getW()+url.end+url.spacial.getSpatial(),function(e,d){
+        gl.addData(d);g.addLayer(gl).addLayer(gp);
+         makeAuto(d);
+    });
 }
 function pl(f,latlng){
     return L.circleMarker(latlng,{radius:4});
