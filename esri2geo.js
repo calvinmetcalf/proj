@@ -10,9 +10,6 @@ function toGeoJSON(data,cb){
             "type": "Feature",
             "properties":prop(ft.attributes)
         };
-        if(ft.attributes.OBJECTID){
-         outFT.id=ft.attributes.OBJECTID;
-        }
         if(ft.geometry.x){
 //check if it's a point
           outFT.geometry=point(ft.geometry);
@@ -56,59 +53,50 @@ function poly(geometry){
         return {"type": "Polygon","coordinates": geometry.rings};
     }else{
 /*if it isn't that easy then we have to start checking ring direction, basically the ring goes clockwise its part of the polygon, if it goes counterclockwise it is a hole in the polygon, but geojson does it by haveing an array with the first element be the polygons and the next elements being holes in it*/
-        var ccc= dP(geometry.rings);
-        var d = ccc[0];
-        var dd = ccc[1];
-        var r=[];
-        if(dd.length===0){
-/*if their are no holes we don't need to worry about this, but do need to stuck each ring inside its own array*/
-            var l2 = d.length;
-            var i3 = 0;
-            while(l2>i3){
-             r.push([d[i3]]);   
-            }
-            return { "type": "MultiPolygon","coordinates":r}; 
-        }else if(d.length===1){
-/*if their is only one clockwise ring then we know all holes are in that poly*/
-            dd.unshift(d[0]);
-            return {"type": "Polygon","coordinates": dd};
-            
-        }else{
-/*if their are multiple rings and holes we have no way of knowing which belong to which without looking at it specially, so just dump the coordinates and add  a hole field, this may cause errors*/
-            return { "type": "MultiPolygon","coordinates":d, "holes":dd};
-        }  
+        return decodePolygon(geometry.rings);
     }
 }
-function dP(a){
-//returns an array of 2 arrays, the first being all the clockwise ones, the second counter clockwise
-    var d = [];
-        var dd =[];
-        var l = a.length;
-        var ii = 0;
-        while(l>ii){
-            if(c(a[ii])){
-                d.push(a[ii]);
-            }else{
-             dd.push(a[ii]);
-            }
-         ii++;
+function decodePolygon(a){
+//returns the feature
+    var coords = [],type;
+    var len = a.length;
+    var i = 0;
+    var len2 = coords.length-1;
+    while(len>i){
+        if(ringIsClockwise(a[i])){
+            coords.push([a[i]]);
+            len2++;
+        }else{
+         coords[len2].push(a[i]);
         }
-    return [d,dd];
-}
-function c(a){
-//return true if clockwise
- var l = a.length-1;
- var i = 0;
- var o=0;
-
- while(l>i){
- o+=(a[i][0]*a[i+1][1]-a[i+1][0]*a[i][1]);
-   
      i++;
- }
-    return o<=0;
-}  
-function prop(a){
+    }
+    if(coords.length===1){
+        type="Polygon";
+    }else{
+        type="MultiPolygon";
+    }
+    return {"type":type,"coordinates":coords};
+}
+/*determine if polygon ring coordinates are clockwise. clockwise signifies outer ring, counter-clockwise an inner ring
+   or hole. this logic was found at http://stackoverflow.com/questions/1165647/how-to-determine-if-a-list-of-polygon-
+   points-are-in-clockwise-order
+   this code taken from http://esri.github.com/geojson-utils/src/jsonConverters.js by James Cardona (MIT lisense)
+   */
+  function ringIsClockwise(ringToTest) {
+    var total = 0,
+        i = 0,
+        rLength = ringToTest.length,
+        pt1 = ringToTest[i],
+        pt2;
+    for (i; i < rLength - 1; i++) {
+      pt2 = ringToTest[i + 1];
+      total += (pt2[0] - pt1[0]) * (pt2[1] + pt1[1]);
+      pt1 = pt2;
+    }
+    return (total >= 0);
+  }
+  function prop(a){
  var p = {};
  for(var k in a){
   if(a[k]){
@@ -118,8 +106,9 @@ function prop(a){
  return p;
 }
 if(cb){
- cb(outPut)
+ cb(outPut);
 }else{
 return outPut;  
 }
 }
+if (typeof module !== "undefined") module.exports = toGeoJSON;
