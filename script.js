@@ -166,8 +166,8 @@ for(var key in p){
 }
 function getLayers(){
     ac={};
-    $.get(url.point+"outFields="+url.fields+"&where="+url.getW()+url.end+url.spacial.getSpatial(),parsePoint,"JSONP");
-    $.get(url.line+"outFields="+url.fields+"&where="+url.getW()+url.end+url.spacial.getSpatial(),parseLine,"JSONP");
+    $.get(url.point+"outFields="+url.fields+"&where="+url.getW()+url.end+url.spacial.getSpatial(),parsePoint,"JSON");
+    $.get(url.line+"outFields="+url.fields+"&where="+url.getW()+url.end+url.spacial.getSpatial(),parseLine,"JSON");
 }
 function pl(f,latlng){
     return L.circleMarker(latlng,{radius:4});
@@ -258,7 +258,7 @@ function lookUp(){
     b= [m.getCenter(),m.getZoom()];
     var t= {esriGeometryPoint:"point",esriGeometryPolyline:"line"};
     var v=$("#ProjNum").val();
-    $.get(url[t[ac[v]]]+"outFields="+url.fields+"&where=ProjectNumber%3D%27"+v+"%27"+url.end+url.spacial.getSpatial(),parseLookUp,"JSONP");
+    $.get(url[t[ac[v]]]+"outFields="+url.fields+"&where=ProjectNumber%3D%27"+v+"%27"+url.end+url.spacial.getSpatial(),parseLookUp,"JSON");
     function parseLookUp(data){
         toGeo.send("toGeo",data,function(e,d){
             lu.addData(d);
