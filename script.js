@@ -242,9 +242,9 @@ function makeAuto(d){
    var i = 0;
    dd=[];
    while(i<len){
-       dd.push({House:f[i].attributes.House,Senate:f[i].attributes.Senate,Congress:f[i].attributes.Congress});
-       if(!ac[f[i].attributes.ProjectNumber]){
-       ac[f[i].attributes.ProjectNumber]=d.geometryType;
+       dd.push({House:f[i].properties.House,Senate:f[i].properties.Senate,Congress:f[i].properties.Congress});
+       if(!ac[f[i].properties.ProjectNumber]){
+       ac[f[i].properties.ProjectNumber]=d.geometryType;
        }
        i++;
     }
