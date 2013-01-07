@@ -119,13 +119,12 @@ getLayers();
 //this is the call back from the jsonp ajax request
 function parseLine(data){
 /*you'd think you'd want to put the command to clear the old layer here instead of after zooming, but the markers are not not visible when you zoom, so it ends up being much less noticeable clearing them earlier*/
-toGeo.send("toGeo",data,function(e,d){gl.addData(d);g.addLayer(gl).addLayer(gp);});
-makeAuto(data);
+toGeo.send("toGeo",data,function(e,d){gl.addData(d);g.addLayer(gl).addLayer(gp);makeAuto(d);});
+
 }
 function parsePoint(data){
 /*you'd think you'd want to put the command to clear the old layer here instead of after zooming, but the markers are not not visible when you zoom, so it ends up being much less noticeable clearing them earlier*/
-toGeo.send("toGeo",data,function(e,d){gp.addData(d)});
-makeAuto(data);
+toGeo.send("toGeo",data,function(e,d){gp.addData(d);makeAuto(d);});
 }
 /*set up listeners on both drag and zoom events
 m.on("dragend",redo);
@@ -236,9 +235,9 @@ function makeAuto(d){
    var i = 0;
    dd=[];
    while(i<len){
-       dd.push({House:f[i].attributes.House,Senate:f[i].attributes.Senate,Congress:f[i].attributes.Congress});
-       if(!ac[f[i].attributes.ProjectNumber]){
-       ac[f[i].attributes.ProjectNumber]=d.geometryType;
+       dd.push({House:f[i].properties.House,Senate:f[i].properties.Senate,Congress:f[i].properties.Congress});
+       if(!ac[f[i].properties.ProjectNumber]){
+       ac[f[i].properties.ProjectNumber]=d.geometryType;
        }
        i++;
     }
