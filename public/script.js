@@ -72,8 +72,8 @@ setStatuses();
 //get the current bounds
 //the url. note we're only getting a subset of fields
 var url = {};
-url.line = "http://services.massdot.state.ma.us/ArcGIS/rest/services/Projects/Project_Lines/MapServer/0/query?";
-url.point = "http://services.massdot.state.ma.us/ArcGIS/rest/services/Projects/Project_Points/MapServer/0/query?";
+url.line = location.protocol+"//"+location.host+"/ArcGIS/rest/services/Projects/Project_Lines/MapServer/0/query?";
+url.point = location.protocol+"//"+location.host+"/ArcGIS/rest/services/Projects/Project_Points/MapServer/0/query?";
 url.fields="ProjectNumber,District,Location,ProjectType,CompletionDate,BudgetSource,Department,Status,House,Senate,Congress";
 url.where={};
 url.setW=function(k,v){
@@ -257,12 +257,16 @@ function lookUp(){
     b= [m.getCenter(),m.getZoom()];
     var t= {esriGeometryPoint:"point",esriGeometryPolyline:"line"};
     var v=$("#ProjNum").val();
-    $.get(url[t[ac[v]]]+"outFields="+url.fields+"&where=ProjectNumber%3D%27"+v+"%27"+url.end+url.spacial.getSpatial(),parseLookUp,"JSON");
+    $.get(location.protocol+"//"+location.host+"/ArcGIS/rest/services/Projects/Project_Lines/MapServer/0/query?outFields="+url.fields+"&where=ProjectNumber%3D%27"+v+"%27"+url.end+url.spacial.getSpatial(),parseLookUp,"JSON");
+        $.get(location.protocol+"//"+location.host+"/ArcGIS/rest/services/Projects/Project_Points/MapServer/0/query?outFields="+url.fields+"&where=ProjectNumber%3D%27"+v+"%27"+url.end+url.spacial.getSpatial(),parseLookUp,"JSON");
+
     function parseLookUp(data){
+        if(data.features.length>0){
         toGeo.send("toGeo",data,function(e,d){
             lu.addData(d);
             m.fitBounds(lu.getBounds());
             });
+    }
     }
    
 return false;
