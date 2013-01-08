@@ -2,52 +2,30 @@
 <html lang="en">
   <head>
     <meta charset='utf-8'/>
-<link rel="shortcut icon" href="img/favicon.ico"/>
-    <link rel="stylesheet" href="style.css"/>
-   
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/smoothness/jquery-ui.css"/>
-    <link rel="stylesheet" href="leaflet/leaflet.css" />
-    <!--[if lte IE 8]>
-      <link rel="stylesheet" href="leaflet/leaflet.ie.css" />
-       <script src="es5-shim.min.js"></script>
-    <![endif]-->
+<link rel="shortcut icon" href="images/favicon.ico"/>
+    
         
     <title>
      Project Locations
     </title>
-  </head>
-  <body><div id="tabs">
-    <ul>
-    <li><a href="#search">Search</a></li>
-      <li><a href="#query">Query</a></li>
-      <li><a href="#LookUp">Look Up</a></li>
-     
-    </ul>
-    <div id="search"><form id="geocoder"><input type="text" class="tbox" id="address" placeholder="Enter an Address or LatLong" />
-  <input type="submit" value="Search" id="geocode"/>
-  <input type="reset" value="Reset" id="resetgeo"/></form>
-        </div>
-        <div id="query"><select id="getStatus"><option value="">All Statuses</option></select>
-        <select id="getDi">
-        <option value="">Highway And MBTA</option>
-        <option value="Highway">Highway</option>
-        <option value="MBTA">MBTA</option>
-        </select>
-        </div>
+    <link rel="stylesheet" href="leaflet.css" type="text/css" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="leaflet.ie.css" />
+            <script src="es5-shim.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/smoothness/jquery-ui.css" />
         
-        <div id="LookUp"><form id="ProjLookUp"><input type="text" id="ProjNum" class="tbox" placeholder="Enter a Project Number" /><input type="submit" value="Look Up" id="ProjLookUp"/>
-  <input type="reset" value="Reset" id="ProjReset"/></form></div>
+    </head>
+    <body>
 
-</div><a id="logo" href="http://www.massdot.state.ma.us/planning" target="_blank"><img src="img/otp.png" alt="logo and link home" border="0"/></a>
-    <div id="map"></div><script src="leaflet/leaflet.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="jquery.placeholder.min.js"></script>
-          <script type="text/javascript" src="leaflet-hash.js"></script>
-          <script type="text/javascript" src="communist.js"></script>
-<script type="text/javascript" src="esri2geo.js"></script>
-    <script type="text/javascript" src="script.js"></script><script type="text/javascript">
+
+        <div id="map"></div>
+            
+     
+        <script type="text/javascript" src="leaflet-bundle.min.js"></script>
+  </head>
+  <body>
+  <div id="map"></div><script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-26192716-1']);

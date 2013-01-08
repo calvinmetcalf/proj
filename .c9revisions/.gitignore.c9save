@@ -1,0 +1,9 @@
+{"ts":1357576581716,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"node_modules\nnpm-debug.log"]],"start1":0,"start2":0,"length1":0,"length2":26}]],"length":26}
+{"contributors":[],"silentsave":true,"ts":1357576584970,"patch":[[{"diffs":[[0,"ebug.log"],[1,"\n"]],"start1":18,"start2":18,"length1":8,"length2":9}]],"length":27,"saved":false}
+{"ts":1357576586513,"patch":[[{"diffs":[[0,"bug.log\n"],[1,".c9"]],"start1":19,"start2":19,"length1":8,"length2":11}]],"length":30,"saved":false}
+{"ts":1357576587344,"patch":[[{"diffs":[[0,".log\n.c9"],[1,"revi"]],"start1":22,"start2":22,"length1":8,"length2":12}]],"length":34,"saved":false}
+{"ts":1357576589062,"patch":[[{"diffs":[[0,"\n.c9revi"],[1,"siosn\n"]],"start1":26,"start2":26,"length1":8,"length2":14}]],"length":40,"saved":false}
+{"ts":1357576589849,"patch":[[{"diffs":[[0,"visiosn\n"],[1,"in"]],"start1":32,"start2":32,"length1":8,"length2":10}]],"length":42,"saved":false}
+{"ts":1357576593219,"patch":[[{"diffs":[[0,"siosn\nin"],[1,"ternals.coffee\n"]],"start1":34,"start2":34,"length1":8,"length2":23}]],"length":57,"saved":false}
+{"ts":1357576596899,"patch":[[{"diffs":[[0,".coffee\n"],[1,"package.json\n"]],"start1":49,"start2":49,"length1":8,"length2":21}]],"length":70,"saved":false}
+{"ts":1357576601974,"patch":[[{"diffs":[[0,"ge.json\n"],[1,"server.coffee"]],"start1":62,"start2":62,"length1":8,"length2":21}]],"length":83,"saved":false}

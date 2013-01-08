@@ -1,0 +1,106 @@
+{"ts":1357576676220,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1357576677915,"patch":[[{"diffs":[[1,"express = require 'express'"]],"start1":0,"start2":0,"length1":0,"length2":27}]],"length":27,"saved":false}
+{"ts":1357576705782,"patch":[[{"diffs":[[0,"express'"],[1,"\n= express()"]],"start1":19,"start2":19,"length1":8,"length2":20}]],"length":39,"saved":false}
+{"ts":1357576710937,"patch":[[{"diffs":[[0,"xpress'\n"],[1,"app"],[0,"= expres"]],"start1":20,"start2":20,"length1":16,"length2":19}]],"length":42,"saved":false}
+{"ts":1357576711519,"patch":[[{"diffs":[[0,"ess'\napp"],[1," "],[0,"= expres"]],"start1":23,"start2":23,"length1":16,"length2":17}]],"length":43,"saved":false}
+{"ts":1357576734031,"patch":[[{"diffs":[[0,"xpress()"],[1,"\nkublai.use express.static('./public')"]],"start1":35,"start2":35,"length1":8,"length2":46}]],"length":81,"saved":false}
+{"ts":1357576738207,"patch":[[{"diffs":[[0,"s()\n"],[-1,"kublai"],[1,"app"],[0,".use"]],"start1":40,"start2":40,"length1":14,"length2":11}]],"length":78,"saved":false}
+{"ts":1357576775167,"patch":[[{"diffs":[[0,"press()\n"],[1,"\n"],[0,"app.use "]],"start1":36,"start2":36,"length1":16,"length2":17}]],"length":79,"saved":false}
+{"ts":1357576778723,"patch":[[{"diffs":[[0,"press()\n"],[1,"request = require"],[0,"\napp.use"]],"start1":36,"start2":36,"length1":16,"length2":33}]],"length":96,"saved":false}
+{"ts":1357576781725,"patch":[[{"diffs":[[0," require"],[1,"("],[0,"\napp.use"]],"start1":53,"start2":53,"length1":16,"length2":17}]],"length":97,"saved":false}
+{"ts":1357576785469,"patch":[[{"diffs":[[0," require"],[-1,"("],[1," 'request\n"],[0,"\napp.use"]],"start1":53,"start2":53,"length1":17,"length2":26}]],"length":106,"saved":false}
+{"ts":1357576787668,"patch":[[{"diffs":[[0,"'request"],[-1,"\n"],[1,";"],[0,"\napp.use"]],"start1":62,"start2":62,"length1":17,"length2":17}]],"length":106,"saved":false}
+{"ts":1357576788364,"patch":[[{"diffs":[[0,"uest"],[-1,";"],[1,"'"],[0,"\napp"]],"start1":66,"start2":66,"length1":9,"length2":9}]],"length":106,"saved":false}
+{"ts":1357576793636,"patch":[[{"diffs":[[0,"public')"],[1,"\n"]],"start1":98,"start2":98,"length1":8,"length2":9}]],"length":107,"saved":false}
+{"ts":1357576808190,"patch":[[{"diffs":[[0,"ublic')\n"],[1,"app"]],"start1":99,"start2":99,"length1":8,"length2":11}]],"length":110,"saved":false}
+{"ts":1357576808930,"patch":[[{"diffs":[[0,"public')\napp"],[1,"."]],"start1":98,"start2":98,"length1":12,"length2":13}]],"length":111,"saved":false}
+{"ts":1357576812213,"patch":[[{"diffs":[[0,"ublic')\napp."],[1,"get "]],"start1":99,"start2":99,"length1":12,"length2":16}]],"length":115,"saved":false}
+{"ts":1357576916684,"patch":[[{"diffs":[[0,"app.get "],[1,"'/:path(*)'"]],"start1":107,"start2":107,"length1":8,"length2":19}]],"length":126,"saved":false}
+{"ts":1357576926937,"patch":[[{"diffs":[[0,"path(*)'"],[1,", (req, res)->"]],"start1":118,"start2":118,"length1":8,"length2":22}]],"length":140,"saved":false}
+{"ts":1357576927651,"patch":[[{"diffs":[[0,", res)->"],[1,"\n    "]],"start1":132,"start2":132,"length1":8,"length2":13}]],"length":145,"saved":false}
+{"ts":1357576933772,"patch":[[{"diffs":[[0,")->\n    "],[1,"console.log("]],"start1":137,"start2":137,"length1":8,"length2":20}]],"length":157,"saved":false}
+{"ts":1357576934512,"patch":[[{"diffs":[[0,"sole.log"],[-1,"("]],"start1":148,"start2":148,"length1":9,"length2":8}]],"length":156,"saved":false}
+{"ts":1357576935889,"patch":[[{"diffs":[[0,"sole.log"],[1," pa"]],"start1":148,"start2":148,"length1":8,"length2":11}]],"length":159,"saved":false}
+{"ts":1357576938155,"patch":[[{"diffs":[[0,"ole.log "],[-1,"pa"],[1,"re"]],"start1":149,"start2":149,"length1":10,"length2":10}]],"length":159,"saved":false}
+{"ts":1357576955982,"patch":[[{"diffs":[[0,"e.log re"],[1,"q.params"]],"start1":151,"start2":151,"length1":8,"length2":16}]],"length":167,"saved":false}
+{"ts":1357576958133,"patch":[[{"diffs":[[0,"q.params"],[1,".path"]],"start1":159,"start2":159,"length1":8,"length2":13}]],"length":172,"saved":false}
+{"ts":1357576997659,"patch":[[{"diffs":[[0,".params.path"],[1,"\nint = require './internals.coffee'\nint.run(kublai)"]],"start1":160,"start2":160,"length1":12,"length2":63}]],"length":223,"saved":false}
+{"ts":1357577001775,"patch":[[{"diffs":[[0,"run("],[-1,"kublai"],[1,"app"],[0,")"]],"start1":212,"start2":212,"length1":11,"length2":8}]],"length":220,"saved":false}
+{"ts":1357577177192,"patch":[[{"diffs":[[0,"ublic')\n"],[1,"kublai.use express.logger('dev') \n"],[0,"app.get "]],"start1":99,"start2":99,"length1":16,"length2":50}]],"length":254,"saved":false}
+{"ts":1357577182160,"patch":[[{"diffs":[[0,"c')\n"],[-1,"kublai"],[1,"app"],[0,".use"]],"start1":103,"start2":103,"length1":14,"length2":11}]],"length":251,"saved":false}
+{"ts":1357577308025,"patch":[[{"diffs":[[0," res)->\n"],[1,"    consol\n"],[0,"    cons"]],"start1":164,"start2":164,"length1":16,"length2":27}]],"length":262,"saved":false}
+{"ts":1357577310436,"patch":[[{"diffs":[[0,"  consol"],[1,"e.log \"get"],[0,"\n    con"]],"start1":174,"start2":174,"length1":16,"length2":26}]],"length":272,"saved":false}
+{"ts":1357577312528,"patch":[[{"diffs":[[0,"log \"get"],[1,"ting\""],[0,"\n    con"]],"start1":184,"start2":184,"length1":16,"length2":21}]],"length":277,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1357577741094,"patch":[[{"diffs":[[0,"log "],[-1,"\"getting\"\n    console.log req.params.path"],[1,"JSON.stringify(req)"],[0,"\nint"]],"start1":184,"start2":184,"length1":49,"length2":27}]],"length":255,"saved":false}
+{"ts":1357577830170,"patch":[[{"diffs":[[0,"log "],[-1,"JSON.st"],[1,"req.o"],[0,"ri"],[-1,"n"],[0,"gi"],[-1,"fy(req)"],[1,"nalUrl"],[0,"\nint"]],"start1":184,"start2":184,"length1":27,"length2":23}]],"length":251,"saved":false}
+{"ts":1357577838362,"patch":[[{"diffs":[[0,"et '"],[-1,"/:path(*)"],[1,"*"],[0,"', ("]],"start1":143,"start2":143,"length1":17,"length2":9}]],"length":243,"saved":false}
+{"ts":1357577958690,"patch":[[{"diffs":[[0,"inalUrl\n"],[1,"    request(\"http://services.massdot.state.ma.us#{req.originolUrl}\").pipe(res)\n"],[0,"int = re"]],"start1":188,"start2":188,"length1":16,"length2":95}]],"length":322,"saved":false}
+{"ts":1357578235741,"patch":[[{"diffs":[[0,"ole.log "],[1,"\"http://services.massdot.state.ma.us#{"],[0,"req.orig"]],"start1":172,"start2":172,"length1":16,"length2":54},{"diffs":[[0,"ginalUrl"],[1,"}\""],[0,"\n    "],[1,"#"],[0,"request("]],"start1":225,"start2":225,"length1":21,"length2":24}]],"length":363,"saved":false}
+{"ts":1357578420125,"patch":[[{"diffs":[[0,"l}\"\n    "],[-1,"#"],[0,"request("]],"start1":232,"start2":232,"length1":17,"length2":16},{"diffs":[[0,"rl}\""],[-1,").pipe(res)"],[1,",(e,r,b)->\n        unless e\n            res.json b"],[0,"\nint"]],"start1":299,"start2":299,"length1":19,"length2":58}]],"length":401,"saved":false}
+{"ts":1357578436119,"patch":[[{"diffs":[[0,"    "],[-1,"unless "],[1,"if e\n            console.log e\n        els"],[0,"e\n  "]],"start1":318,"start2":318,"length1":15,"length2":50}]],"length":436,"saved":false}
+{"ts":1357578497670,"patch":[[{"diffs":[[0," request"],[-1,"("],[1," "],[0,"\"http://"]],"start1":239,"start2":239,"length1":17,"length2":17},{"diffs":[[0,".json b\n"],[1,"        true\n"],[0,"int = re"]],"start1":381,"start2":381,"length1":16,"length2":29}]],"length":449,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1357579721999,"patch":[[{"diffs":[[0,"    "],[-1,"request \"http://services.massdot.state.ma.us#{req.originolUrl}\",(e,r,b)->\n        if e\n            console.log e\n        else\n            res.json b\n        true"],[0,"\nint"]],"start1":236,"start2":236,"length1":169,"length2":8}]],"length":288,"saved":false}
+{"ts":1357579723742,"patch":[[{"diffs":[[0,"l}\"\n    "],[1,"request \"http://services.massdot.state.ma.us#{req.originolUrl}\",(e,r,b)->\n        if e\n            console.log e\n        else\n            res.json b\n        true"],[0,"\nint = r"]],"start1":232,"start2":232,"length1":16,"length2":177}]],"length":449,"saved":false}
+{"ts":1357579725881,"patch":[[{"diffs":[[0,"l}\"\n    "],[1,"#"],[0,"request "]],"start1":232,"start2":232,"length1":16,"length2":17}]],"length":450,"saved":false}
+{"ts":1357579727800,"patch":[[{"diffs":[[0,",r,b)->\n    "],[1,"#"],[0,"    if e\n   "]],"start1":307,"start2":307,"length1":24,"length2":25},{"diffs":[[0,"   if e\n    "],[1,"#"],[0,"        cons"]],"start1":321,"start2":321,"length1":24,"length2":25}]],"length":452,"saved":false}
+{"ts":1357579728494,"patch":[[{"diffs":[[0,"e.log e\n    "],[1,"#"],[0,"    else\n   "]],"start1":348,"start2":348,"length1":24,"length2":25}]],"length":453,"saved":false}
+{"ts":1357579729144,"patch":[[{"diffs":[[0,"   else\n    "],[1,"#"],[0,"        res."]],"start1":362,"start2":362,"length1":24,"length2":25}]],"length":454,"saved":false}
+{"ts":1357579729745,"patch":[[{"diffs":[[0,".json b\n    "],[1,"#"],[0,"    true\nint"]],"start1":386,"start2":386,"length1":24,"length2":25}]],"length":455,"saved":false}
+{"ts":1357579758046,"patch":[[{"diffs":[[0,"log "],[-1,"\"http://services.massdot.state.ma.us#{req.originalUrl}\""],[1,"req.path"],[0,"\n   "]],"start1":176,"start2":176,"length1":63,"length2":16}]],"length":408,"saved":false}
+{"ts":1357579764970,"patch":[[{"diffs":[[0,"log "],[-1,"req.path"],[0,"\n   "]],"start1":176,"start2":176,"length1":16,"length2":8}]],"length":400,"saved":false}
+{"ts":1357579767995,"patch":[[{"diffs":[[0,"req, res)->\n"],[1,"    \n"],[0,"    console."]],"start1":152,"start2":152,"length1":24,"length2":29}]],"length":405,"saved":false}
+{"ts":1357579772666,"patch":[[{"diffs":[[0,")->\n    "],[1,"r="],[0,"\n    con"]],"start1":160,"start2":160,"length1":16,"length2":18}]],"length":407,"saved":false}
+{"ts":1357579773658,"patch":[[{"diffs":[[0,">\n    r="],[1,"{"],[0,"\n    con"]],"start1":162,"start2":162,"length1":16,"length2":17}]],"length":408,"saved":false}
+{"ts":1357579775338,"patch":[[{"diffs":[[0,"\n    r={"],[1,"}\n    r"],[0,"\n    con"]],"start1":163,"start2":163,"length1":16,"length2":23}]],"length":415,"saved":false}
+{"ts":1357579777223,"patch":[[{"diffs":[[0,"{}\n    r"],[1,".path "],[0,"\n    con"]],"start1":170,"start2":170,"length1":16,"length2":22}]],"length":421,"saved":false}
+{"ts":1357579778690,"patch":[[{"diffs":[[0," r.path "],[1,"= "],[0,"\n    con"]],"start1":176,"start2":176,"length1":16,"length2":18}]],"length":423,"saved":false}
+{"ts":1357579780713,"patch":[[{"diffs":[[0,".path = "],[1,"req.path"],[0,"\n    con"]],"start1":178,"start2":178,"length1":16,"length2":24}]],"length":431,"saved":false}
+{"ts":1357579786356,"patch":[[{"diffs":[[0,".path = "],[1,"\"http://services.massdot.state.ma.us#{req.originolUrl}\""],[0,"req.path"]],"start1":178,"start2":178,"length1":16,"length2":71}]],"length":486,"saved":false}
+{"ts":1357579790050,"patch":[[{"diffs":[[0,"us#{req."],[-1,"originolUrl"],[1,"path"],[0,"}\"req.pa"]],"start1":220,"start2":220,"length1":27,"length2":20}]],"length":479,"saved":false}
+{"ts":1357579793204,"patch":[[{"diffs":[[0,"q.path}\""],[-1,"req.path"],[0,"\n    con"]],"start1":226,"start2":226,"length1":24,"length2":16}]],"length":471,"saved":false}
+{"ts":1357579797771,"patch":[[{"diffs":[[0,"ole.log "],[1,"r.path"],[0,"\n    #re"]],"start1":243,"start2":243,"length1":16,"length2":22}]],"length":477,"saved":false}
+{"ts":1357579801708,"patch":[[{"diffs":[[0,"le.log r"],[-1,".path"],[0,"\n    #re"]],"start1":244,"start2":244,"length1":21,"length2":16}]],"length":472,"saved":false}
+{"ts":1357579855141,"patch":[[{"diffs":[[0,"}\n    r."],[-1,"path"],[1,"url"],[0," = \"http"]],"start1":171,"start2":171,"length1":20,"length2":19}]],"length":471,"saved":false}
+{"ts":1357579861565,"patch":[[{"diffs":[[0,".path}\"\n"],[1,"    r.q\n"],[0,"    cons"]],"start1":226,"start2":226,"length1":16,"length2":24}]],"length":479,"saved":false}
+{"ts":1357579864508,"patch":[[{"diffs":[[0,"\n    r.q"],[1,"s = "],[0,"\n    con"]],"start1":233,"start2":233,"length1":16,"length2":20}]],"length":483,"saved":false}
+{"ts":1357579867971,"patch":[[{"diffs":[[0," r.qs = "],[1,"req.params"],[0,"\n    con"]],"start1":237,"start2":237,"length1":16,"length2":26}]],"length":493,"saved":false}
+{"ts":1357579884251,"patch":[[{"diffs":[[0,"req."],[-1,"params"],[1,"query"],[0,"\n   "]],"start1":245,"start2":245,"length1":14,"length2":13}]],"length":492,"saved":false}
+{"ts":1357579946508,"patch":[[{"diffs":[[0,"    "],[-1,"console.log r"],[1,"reques"],[0,"\n   "]],"start1":255,"start2":255,"length1":21,"length2":14}]],"length":485,"saved":false}
+{"ts":1357579947661,"patch":[[{"diffs":[[0,"  reques"],[1,"t"],[0,"\n    #re"]],"start1":257,"start2":257,"length1":16,"length2":17}]],"length":486,"saved":false}
+{"ts":1357579949325,"patch":[[{"diffs":[[0," request"],[1," {"],[0,"\n    #re"]],"start1":258,"start2":258,"length1":16,"length2":18}]],"length":488,"saved":false}
+{"ts":1357579950624,"patch":[[{"diffs":[[0,"uest"],[-1," {"],[0,"\n   "]],"start1":262,"start2":262,"length1":10,"length2":8}]],"length":486,"saved":false}
+{"ts":1357579951828,"patch":[[{"diffs":[[0," request"],[1," r"],[0,"\n    #re"]],"start1":258,"start2":258,"length1":16,"length2":18}]],"length":488,"saved":false}
+{"ts":1357579954409,"patch":[[{"diffs":[[0,"equest r"],[1,","],[0,"\n    #re"]],"start1":260,"start2":260,"length1":16,"length2":17}]],"length":489,"saved":false}
+{"ts":1357579958142,"patch":[[{"diffs":[[0,"quest r,"],[1,"("],[0,"\n    #re"]],"start1":261,"start2":261,"length1":16,"length2":17}]],"length":490,"saved":false}
+{"ts":1357579958982,"patch":[[{"diffs":[[0,"uest r,("],[1,"e,r,"],[0,"\n    #re"]],"start1":262,"start2":262,"length1":16,"length2":20}]],"length":494,"saved":false}
+{"ts":1357579959984,"patch":[[{"diffs":[[0,"st r,(e,"],[-1,"r,"],[0,"\n    #re"]],"start1":264,"start2":264,"length1":18,"length2":16}]],"length":492,"saved":false}
+{"ts":1357579962701,"patch":[[{"diffs":[[0,"st r,(e,"],[1,"resp,"],[0,"\n    #re"]],"start1":264,"start2":264,"length1":16,"length2":21}]],"length":497,"saved":false}
+{"ts":1357579963877,"patch":[[{"diffs":[[0,",res"],[-1,"p,"],[0,"\n   "]],"start1":271,"start2":271,"length1":10,"length2":8}]],"length":495,"saved":false}
+{"ts":1357579965547,"patch":[[{"diffs":[[0,"t r,(e,r"],[-1,"es"],[1,"r,b"],[0,"\n    #re"]],"start1":265,"start2":265,"length1":18,"length2":19}]],"length":496,"saved":false}
+{"ts":1357579966616,"patch":[[{"diffs":[[0,",(e,rr,b"],[1,")"],[0,"\n    #re"]],"start1":268,"start2":268,"length1":16,"length2":17}]],"length":497,"saved":false}
+{"ts":1357579967347,"patch":[[{"diffs":[[0,"(e,rr,b)"],[1,"-"],[0,"\n    #re"]],"start1":269,"start2":269,"length1":16,"length2":17}]],"length":498,"saved":false}
+{"ts":1357579968038,"patch":[[{"diffs":[[0,"e,rr,b)-"],[1,">\n        "],[0,"\n    #re"]],"start1":270,"start2":270,"length1":16,"length2":26}]],"length":508,"saved":false}
+{"ts":1357579973809,"patch":[[{"diffs":[[0,"        "],[1,"if e\n            "],[0,"\n    #re"]],"start1":280,"start2":280,"length1":16,"length2":33}]],"length":525,"saved":false}
+{"ts":1357579974488,"patch":[[{"diffs":[[0,"        "],[1,"con"],[0,"\n    #re"]],"start1":297,"start2":297,"length1":16,"length2":19}]],"length":528,"saved":false}
+{"ts":1357579977668,"patch":[[{"diffs":[[0,"     con"],[1,"sole.log e\n            "],[0,"\n    #re"]],"start1":300,"start2":300,"length1":16,"length2":39}]],"length":551,"saved":false}
+{"ts":1357579978861,"patch":[[{"diffs":[[0,"        "],[-1,"    "],[1,"else"],[0,"\n    #re"]],"start1":319,"start2":319,"length1":20,"length2":20}]],"length":551,"saved":false}
+{"ts":1357579979964,"patch":[[{"diffs":[[0,"       else\n"],[1,"            \n"],[0,"    #request"]],"start1":320,"start2":320,"length1":24,"length2":37}]],"length":564,"saved":false}
+{"ts":1357579985478,"patch":[[{"diffs":[[0,"        "],[1,"req"],[0,"\n    #re"]],"start1":336,"start2":336,"length1":16,"length2":19}]],"length":567,"saved":false}
+{"ts":1357579986178,"patch":[[{"diffs":[[0,"      re"],[-1,"q"],[1,"s"],[0,"\n    #re"]],"start1":338,"start2":338,"length1":17,"length2":17}]],"length":567,"saved":false}
+{"ts":1357579987667,"patch":[[{"diffs":[[0,"     res"],[1,".json"],[0,"\n    #re"]],"start1":339,"start2":339,"length1":16,"length2":21}]],"length":572,"saved":false}
+{"ts":1357579989581,"patch":[[{"diffs":[[0,"res.json"],[1," b"],[0,"\n    #re"]],"start1":344,"start2":344,"length1":16,"length2":18}]],"length":574,"saved":false}
+{"ts":1357580050383,"patch":[[{"diffs":[[0,"equest r"],[1,")"],[0,",(e,rr,b"]],"start1":260,"start2":260,"length1":16,"length2":17}]],"length":575,"saved":false}
+{"ts":1357580052034,"patch":[[{"diffs":[[0," request"],[-1," "],[1,"*"],[0,"r),(e,rr"]],"start1":258,"start2":258,"length1":17,"length2":17}]],"length":575,"saved":false}
+{"ts":1357580053210,"patch":[[{"diffs":[[0," request"],[-1,"*"],[1,"("],[0,"r),(e,rr"]],"start1":258,"start2":258,"length1":17,"length2":17}]],"length":575,"saved":false}
+{"ts":1357580056543,"patch":[[{"diffs":[[0,"    "],[-1,"    if e\n            console.log e\n        else\n            res.json b"],[0,"\n   "]],"start1":281,"start2":281,"length1":78,"length2":8}]],"length":505,"saved":false}
+{"ts":1357580057448,"patch":[[{"diffs":[[0,"e,rr,b)-"],[-1,">\n    "],[0,"\n    #re"]],"start1":271,"start2":271,"length1":22,"length2":16}]],"length":499,"saved":false}
+{"ts":1357580060552,"patch":[[{"diffs":[[0,"t(r)"],[-1,",(e,rr,b)-"],[0,"\n   "]],"start1":265,"start2":265,"length1":18,"length2":8}]],"length":489,"saved":false}
+{"ts":1357580062748,"patch":[[{"diffs":[[0,"quest(r)"],[1,".pipe"],[0,"\n    #re"]],"start1":261,"start2":261,"length1":16,"length2":21}]],"length":494,"saved":false}
+{"ts":1357580064998,"patch":[[{"diffs":[[0,"(r).pipe"],[1," res"],[0,"\n    #re"]],"start1":266,"start2":266,"length1":16,"length2":20}]],"length":498,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1357671163779,"patch":[[{"diffs":[[0,"c')\n"],[-1,"app.use express.logger('dev') "],[0,"\napp"]],"start1":103,"start2":103,"length1":38,"length2":8}]],"length":468,"saved":false}
+{"ts":1357671169375,"patch":[[{"diffs":[[0,"ublic')\n"],[1,"recompile=()->\n    scripts = [\"jquery.1.8.3.js\",\"jquery-ui.1.9.2.js\",\"leaflet-src.js\",\"jquery.placeholder.js\",\"leaflet-hash.js\",\"leaflet-providers.js\",\"leaflet.ajax.js\",\"map.js\",\"more.coffee\"].map (v)->\n        if v.slice(-2)==\"js\"\n            fs.readFileSync \"./assets/\"+v\n        else if v.slice(-6)==\"coffee\"\n            coffee.compile(\"#{fs.readFileSync('./assets/'+v) }\")\n\n    fs.writeFileSync \"./public/leaflet-bundle.js\",scripts.join(\"\\n\")\n    ast = uglify.parse scripts.join(\"\\n\") \n    ast.figure_out_scope()\n    ast.compute_char_frequency()\n    ast.mangle_names()\n    fs.writeFileSync \"./public/leaflet-bundle.min.js\",ast.print_to_string()\n    true\nrecompile()"],[0,"\napp.get"]],"start1":99,"start2":99,"length1":16,"length2":685}]],"length":1137,"saved":false}
+{"ts":1357671180165,"patch":[[{"diffs":[[0,"press()\n"],[1,"coffee=require 'coffee-script'\nfs=require 'fs'\nuglify = require 'uglify-js'\n"],[0,"request "]],"start1":36,"start2":36,"length1":16,"length2":92}]],"length":1213,"saved":false}
+{"ts":1357672328353,"patch":[[{"diffs":[[0,"et-src.js\",\""],[1,"esri2ge\""],[0,"jquery.place"]],"start1":258,"start2":258,"length1":24,"length2":32}]],"length":1221,"saved":false}
+{"ts":1357672330302,"patch":[[{"diffs":[[0,"\"esri2ge"],[1,"o.js\""],[0,"\"jquery."]],"start1":269,"start2":269,"length1":16,"length2":21}]],"length":1226,"saved":false}
+{"ts":1357672331038,"patch":[[{"diffs":[[0,"2geo.js\""],[1,","],[0,"\"jquery."]],"start1":274,"start2":274,"length1":16,"length2":17}]],"length":1227,"saved":false}
+{"ts":1357672722525,"patch":[[{"diffs":[[0,"mpile()\n"],[1,"fs.watch \"./assets\",recompile\n"],[0,"app.get "]],"start1":859,"start2":859,"length1":16,"length2":46}]],"length":1257,"saved":false}
