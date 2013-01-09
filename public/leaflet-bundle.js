@@ -33528,7 +33528,15 @@ function makePop(p){
     var a = Object.keys(p).filter(function(f){
         return true//["OBJECTID","Status","Latitude","Longitude","Icon","PhysicalTown"].indexOf(f)==-1;
     }).map(function(v){
-        return v.replace(/(([a-z])([A-Z]))/g,"$2 $3") +": "+p[v];
+    	var value = p[v];
+    	if(["House","Senate","Congress"].indexOf(v)>-1){
+    	if(value === "unk"){
+    		value = "Unknown"	
+    	}else{
+    			value = value.replace(/([A-Z])/g," $1").slice(1);
+    		}
+    	}
+        return v.replace(/(([a-z])([A-Z]))/g,"$2 $3") +": "+value;
     });
     return a.join("<br />");
 }
@@ -33622,17 +33630,25 @@ $(function(){
     var div = $("#"+id);
     div.empty();
     var frag  = document.createDocumentFragment(); 
-    makeOptions("all","all "+id);
+    makeOptions("all","All "+id);
     if(id in state){
      makeOptions(values[id][0],values[id][0],"unique");
     }else{
-       values[id].forEach(makeOptions);
+    	values[id].sort();
+        values[id].forEach(makeOptions);
     }
     div.append(frag);
     
     function makeOptions(v,vv,checked){
         if(!vv || vv>-1){
             vv=v;
+        }
+        if(["House","Senate","Congress"].indexOf(id)>-1){
+        	if(vv !== "unk"){
+        	vv=vv.replace(/([A-Z])/g," $1").slice(1)
+        	}else{
+        		vv = "Unknown";
+        	}
         }
         var opt = document.createElement("option");
         opt.innerHTML=vv;
